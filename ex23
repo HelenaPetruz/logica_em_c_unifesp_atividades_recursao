@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int somaVetor(int[], int);
+
+int main() {
+    int v[10];
+    for(int i = 0; i < 10; i++) {
+        printf("Digite um valor: ");
+        scanf("%d", &v[i]);
+    }
+    printf("Soma = %d", somaVetor(v, 9));
+}
+
+int somaVetor(int v[], int i) {
+    if(i == 0)
+        return v[0];
+    return v[i] + somaVetor(v, i - 1);
+}
